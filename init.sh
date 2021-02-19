@@ -15,7 +15,7 @@ git clone https://github.com/informalsystems/ibc-rs.git
 cd ibc-rs
 git checkout v0.1.1
 cargo build --release --bin hermes
-alias hermes='cargo run --release --bin hermes --'
+alias hermes='$HOME/ibc-setup/ibc-rs/target/release/hermes'
 
 # install gaia
 mkdir -p $HOME/go/bin
