@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # copy hermes config
 cp ibc/config.toml ~/.hermes/config.toml
 

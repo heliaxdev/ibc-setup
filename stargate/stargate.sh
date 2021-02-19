@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #variables
 NAME="stargate"
 PATH="~/node-${NAME}"
