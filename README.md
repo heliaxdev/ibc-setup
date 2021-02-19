@@ -9,7 +9,7 @@ Tested on ec2 / amazon linux.
 - `cd setup-ibc`
 - `./init.sh`
 - `source ~/.bash_profile`
-- `./setup.sh`
+- `./run.sh`
 
 ## Issues
 
