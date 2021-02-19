@@ -1,3 +1,4 @@
 #!/bin/bash
+BINARY="$HOME/ibc-setup/ibc-rs/target/release/hermes"
 
-hermes channel handshake stargate heliax transfer transfer
+BINARY channel handshake stargate heliax transfer transfer
