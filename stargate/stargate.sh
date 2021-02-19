@@ -20,7 +20,7 @@ rm "${NODE_PATH}/config/config.toml"
 cp stargate/genesis.json "${NODE_PATH}/config/toml.json"
 
 # generate key
-gaiad --home --home=${NODE_PATH} keys add user --keyring-backend="test" --output json > ${NODE_PATH}/key_seed.json 2> /dev/null
+gaiad --home=${NODE_PATH} keys add user --keyring-backend="test" --output json > ${NODE_PATH}/key_seed.json 2> /dev/null
 
 # start node
 gaiad start --home=${NODE_PATH} --log_level=info --x-crisis-skip-assert-invariants --pruning=nothing --grpc.address="0.0.0.0:9090"
