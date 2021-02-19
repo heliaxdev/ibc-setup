@@ -12,7 +12,8 @@ gaiad init heliax-${NAME} --home=${PATH}
 
 # move genesis
 rm "${PATH}/config/genesis.json"
-cp stargate/genesis.json "${PATH}/config/genesis.json"
+unzip "stargate/genesis.zip" -d "stargate"
+cp "stargate/genesis.json" "${PATH}/config/genesis.json"
 
 # copy config
 rm "${PATH}/config/config.toml"

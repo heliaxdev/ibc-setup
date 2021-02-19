@@ -42,3 +42,4 @@ Temporary Items
 # End of https://www.toptal.com/developers/gitignore/api/vscode,osx
 
 cosmos.pem
+genesis.json
