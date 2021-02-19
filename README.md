@@ -13,5 +13,5 @@ Tested on ec2 / amazon linux.
 
 ## Issues
 
-- Somehow, when running `hermes channel handshake ibc-0 ibc-1 transfer transfer`, it ends with the following error: 
+- Somehow, when running `hermes channel handshake stargate heliax transfer transfer`, it ends with the following error: 
   ```{"status":"error","result":"chain runtime/handle error: Light client supervisor error for chain id heliax: empty witness list"}```
