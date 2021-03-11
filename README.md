@@ -6,7 +6,7 @@ Tested on ec2 / amazon linux.
 
 ## How to run
 
-- `cd setup-ibc`
+- `cd ibc-setup`
 - `./init.sh`
 - `source ~/.bash_profile`
 - `./run.sh`
