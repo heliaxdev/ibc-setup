@@ -8,7 +8,7 @@ cp ibc/config.toml ~/.hermes/config.toml
 cd ibc-rs
 
 echo "Building the Rust relayer..."
-cargo build &> /dev/null
+cargo build -q --locked
 
 # add the key seeds to the keyring of each chain
 echo "Importing keys..."
