@@ -5,8 +5,8 @@ log_level = 'error'
 
 [[chains]]
 id = 'stargate'
-rpc_addr = 'tcp://localhost:26657'
-grpc_addr = 'tcp://localhost:9090'
+rpc_addr = 'http://localhost:26657'
+grpc_addr = 'http://localhost:9090'
 websocket_addr = 'ws://localhost:26557/websocket'
 rpc_timeout = '10s'
 account_prefix = 'cosmos'
@@ -24,8 +24,8 @@ denominator = '3'
 
 [[chains]]
 id = 'heliax'
-rpc_addr = 'tcp://localhost:26357'
-grpc_addr = 'tcp://localhost:9091'
+rpc_addr = 'http://localhost:26357'
+grpc_addr = 'http://localhost:9091'
 websocket_addr = 'ws://localhost:26357/websocket'
 rpc_timeout = '10s'
 account_prefix = 'cosmos'
