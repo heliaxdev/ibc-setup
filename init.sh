@@ -36,7 +36,7 @@ source ~/.bash_profile
 
 git clone https://github.com/cosmos/gaia.git ~/go/src/github.com/cosmos/gaia
 cd ~/go/src/github.com/cosmos/gaia
-git checkout v4.0.0
+git checkout v4.2.1
 make install
 
 # update bash profile
