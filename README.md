@@ -9,7 +9,6 @@ Tested on ec2 / amazon linux.
 - `sudo yum install git -y`
 - `cd ibc-setup`
 - `./init.sh`
-- `source ~/.bash_profile`
 - `./run.sh`
 - As soon as the stargate node is ready, run `./ibc.sh`
 

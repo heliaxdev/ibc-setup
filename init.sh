@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # install rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
 source $HOME/.cargo/env
 
 # install git
@@ -20,12 +20,12 @@ sudo usermod -a -G docker ec2-user
 sudo chkconfig docker on
 
 # update bash profile
-source ~/.bash_profile
+. ~/.bash_profile
 
 # install ibc
 git clone https://github.com/informalsystems/ibc-rs.git
 cd ibc-rs
-git checkout v0.2.0
+git checkout v0.3.2
 cargo build --release --bin hermes
 alias hermes='$HOME/ibc-setup/ibc-rs/target/release/hermes'
 
@@ -40,4 +40,4 @@ git checkout v4.2.1
 make install
 
 # update bash profile
-source ~/.bash_profile
+. ~/.bash_profile
