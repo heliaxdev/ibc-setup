@@ -6,6 +6,7 @@ Tested on ec2 / amazon linux.
 
 ## How to run
 
+- `sudo yum install git -y`
 - `cd ibc-setup`
 - `./init.sh`
 - `source ~/.bash_profile`
