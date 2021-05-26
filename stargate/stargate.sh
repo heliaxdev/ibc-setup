@@ -26,4 +26,4 @@ cp stargate/config.toml "${NODE_PATH}/config/config.toml"
 gaiad --home=${NODE_PATH} keys add user --keyring-backend="test" --recover
 
 # start node
-screen -d -m -S ${NAME} bash -c "gaiad start --home=${NODE_PATH} --log_level=info --x-crisis-skip-assert-invariants --pruning=nothing --grpc.address=\"0.0.0.0:9090\""
+screen -d -m -S ${NAME} bash -c "gaiad start --home=${NODE_PATH} --log_level=info --x-crisis-skip-assert-invariants --pruning=nothing"
