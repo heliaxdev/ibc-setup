@@ -4,8 +4,9 @@
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
 source $HOME/.cargo/env
 
-# install git
+# install git, htop
 sudo yum install -y git
+sudo yum install -y htop
 
 # install golang
 sudo yum install golang -y
