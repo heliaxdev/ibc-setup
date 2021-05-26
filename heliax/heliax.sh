@@ -22,7 +22,7 @@ cp heliax/config.toml "${NODE_PATH}/config/config.toml"
 
 #copy app.toml
 rm "${NODE_PATH}/config/app.toml"
-cp stargate/app.toml "${NODE_PATH}/config/app.toml"
+cp heliax/app.toml "${NODE_PATH}/config/app.toml"
 
 # generate key
 gaiad --home=${NODE_PATH} keys add user --keyring-backend="test" --output json > ${NODE_PATH}/key_seed.json 2> /dev/null
