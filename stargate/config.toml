@@ -186,7 +186,6 @@ seeds = "ee27245d88c632a556cf72cc7f3587380c09b469@45.79.249.253:26656,bf8328b66d
 
 
 # Comma separated list of nodes to keep persistent connections to
-# persistent_peers = "3e16af0cead27979e1fc3dac57d03df3c7a77acc@3.87.179.235:26656,ba3bacc714817218562f743178228f23678b2873@public-seed-node.cosmoshub.certus.one:26656,067041dc191225c016749d43b0c51964e74aded4@35:245:96:132:26656"
 persistent_peers = "ee27245d88c632a556cf72cc7f3587380c09b469@45.79.249.253:26656,bf8328b66dceb4987e5cd94430af66045e59899f@public-seed.cosmos.vitwit.com:26656,585794737e6b318957088e645e17c0669f3b11fc@54.160.123.34:26656,df57f70cd3a104dcbd14d1aac9eb260c99a620e0@121.78.247.247:26656,11dfe200894f38e411beca77928e9dd118e66813@94.130.98.157:26656,5b4ed476e01c49b23851258d867cc0cfc0c10e58@206.189.4.227:26656,654f47a762c8f9257aef4a44c1fb5014916d8b20@99.79.60.15:26656,366ac852255c3ac8de17e11ae9ec814b8c68bddb@51.15.94.196:26656,547bfac343b9b4bd54ce9cb891c4bca3db2a0922@157.230.116.241:26656,d6318b3bd51a5e2b8ed08f2e520d50289ed32bf1@52.79.43.100:26656,1bfda3d59e70290a3dada9bb809dd954371850d3@54.180.225.240:26656,6ee94c2093505e8790442c054e6e1e0211d36583@44.239.140.195:26656,ec779a2741da6dd2ccdaa6dfc0bebb10e595dfa4@50.18.113.67:26656,cfd785a4224c7940e9a10f6c1ab24c343e923bec@164.68.107.188:26656,047f723806ee702b211e7227f89eacd829aabd86@52.9.212.125:26656,b0e746acb6fbed7a0311fe21cfb2ee94581ca3bc@51.79.21.187:26656,82772547c4575c18dfe6e75aafe521cf7d4dc8de@142.93.157.186:26656,3c7cad4154967a294b3ba1cc752e40e8779640ad@84.201.128.115:26656"
 
 
@@ -201,7 +200,7 @@ addr_book_file = "config/addrbook.json"
 addr_book_strict = true
 
 # Maximum number of inbound peers
-max_num_inbound_peers = 40
+max_num_inbound_peers = 50
 
 # Maximum number of outbound peers to connect to, excluding persistent peers
 max_num_outbound_peers = 10
@@ -231,7 +230,7 @@ pex = true
 # peers. If another node asks it for addresses, it responds and disconnects.
 #
 # Does not work if the peer-exchange reactor is disabled.
-seed_mode = false
+seed_mode = true
 
 # Comma separated list of peer IDs to keep private (will not be gossiped to other peers)
 private_peer_ids = ""
@@ -372,7 +371,7 @@ peer_query_maj23_sleep_duration = "2s"
 #   1) "null"
 #   2) "kv" (default) - the simplest possible indexer, backed by key-value storage (defaults to levelDB; see DBBackend).
 # 		- When "kv" is chosen "tx.height" and "tx.hash" will always be indexed.
-indexer = "kv"
+indexer = "null"
 
 index_all_keys = true
 
