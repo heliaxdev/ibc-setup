@@ -27,7 +27,11 @@ cp stargate/app.toml "${NODE_PATH}/config/app.toml"
 # gaiad --home=${NODE_PATH} keys add user --keyring-backend="test" --output json > ${NODE_PATH}/key_seed.json 2> /dev/null 
 
 # import key (requires interaction)
-gaiad --home=${NODE_PATH} keys add user --keyring-backend="test" --recover
+OUTPUT=$(gaiad --home=${NODE_PATH} keys add user --keyring-backend="test" --recover --output json)
+echo $OUTPUT > ${NODE_PATH}/key_seed.json 2> /dev/null
+read MNEMONIC
+KEY_SEED=$(jq --arg MNEMONIC "$MNEMONIC" '{ "mnemonic": $MNEMONIC } + .' ${NODE_PATH}/key_seed.json)
+echo $KEY_SEED > ${NODE_PATH}/key_seed.json
 
 # download a snapshot of the chain 15/06/2021
 rm -rf "${NODE_PATH}/data"
@@ -35,6 +39,7 @@ FILENAME="cosmoshub-4-default.20210615.0510.tar.lz4"
 cd $NODE_PATH
 aria2c -x5 https://get.quicksync.io/$FILENAME
 lz4 -d $FILENAME | tar xf -
+rm $FILENAME
 cd ~/ibc-setup
 
 # start node

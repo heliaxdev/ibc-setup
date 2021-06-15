@@ -12,6 +12,7 @@ sudo yum install aria2 -y
 # install git, htop
 sudo yum install -y git
 sudo yum install -y htop
+sudo yum install -y jq
 
 # install golang
 sudo yum install golang -y
