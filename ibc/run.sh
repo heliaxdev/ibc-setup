@@ -1,5 +1,5 @@
 #!/bin/bash
 
-./client.sh
-./connection.sh
-./channel.sh
+./ibc/client.sh
+./ibc/connection.sh
+./ibc/channel.sh
