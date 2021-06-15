@@ -29,5 +29,12 @@ cp stargate/app.toml "${NODE_PATH}/config/app.toml"
 # import key (requires interaction)
 gaiad --home=${NODE_PATH} keys add user --keyring-backend="test" --recover
 
+# download a snapshot of the chain 15/06/2021
+rm -rf "${NODE_PATH}/data"
+FILENAME="cosmoshub-4-default.20210615.0510.tar.lz4"
+cd $NODE_PATH
+aria2c -x5 https://get.quicksync.io/$FILENAME
+lz4 -d $FILENAME | tar xf -
+
 # start node
 screen -d -m -S ${NAME} bash -c "gaiad start --home=${NODE_PATH} --log_level=info --x-crisis-skip-assert-invariants --pruning=nothing"

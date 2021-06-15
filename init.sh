@@ -4,6 +4,11 @@
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
 source $HOME/.cargo/env
 
+# install aria2 and lz4 to download cosmos snapshot
+sudo amazon-linux-extras install epel
+sudo yum install lz4 lz4-devel -y
+sudo yum install aria2 -y
+
 # install git, htop
 sudo yum install -y git
 sudo yum install -y htop
