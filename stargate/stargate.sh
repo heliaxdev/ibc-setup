@@ -35,6 +35,7 @@ FILENAME="cosmoshub-4-default.20210615.0510.tar.lz4"
 cd $NODE_PATH
 aria2c -x5 https://get.quicksync.io/$FILENAME
 lz4 -d $FILENAME | tar xf -
+cd ~/ibc-setup
 
 # start node
 screen -d -m -S ${NAME} bash -c "gaiad start --home=${NODE_PATH} --log_level=info --x-crisis-skip-assert-invariants --pruning=nothing"
