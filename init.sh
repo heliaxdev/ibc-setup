@@ -32,7 +32,7 @@ sudo chkconfig docker on
 # install ibc
 git clone https://github.com/informalsystems/ibc-rs.git
 cd ibc-rs
-git checkout v0.3.2
+git checkout v0.4.0
 cargo build --release --bin hermes
 alias hermes='$HOME/ibc-setup/ibc-rs/target/release/hermes'
 
