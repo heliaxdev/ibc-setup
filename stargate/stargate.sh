@@ -38,4 +38,4 @@ lz4 -d $FILENAME | tar xf -
 cd ~/ibc-setup
 
 # start node
-screen -d -m -S ${NAME} bash -c "gaiad start --home=${NODE_PATH} --log_level=info --x-crisis-skip-assert-invariants --pruning=nothing"
+screen -d -m -S ${NAME} bash -c "gaiad start --home=${NODE_PATH} --log_level=info --x-crisis-skip-assert-invariants"
