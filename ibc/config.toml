@@ -23,7 +23,7 @@ numerator = '1'
 denominator = '3'
 
 [[chains]]
-id = 'heliax'
+id = 'h3liax'
 rpc_addr = 'http://localhost:26357'
 grpc_addr = 'http://localhost:9091'
 websocket_addr = 'ws://localhost:26357/websocket'
@@ -41,10 +41,9 @@ trusting_period = '14days'
 numerator = '1'
 denominator = '3'
 
-
 [[connections]]
 a_chain = 'stargate'
-b_chain = 'heliax'
+b_chain = 'h3liax'
 delay = '10s'
 
 [[connections.paths]]
@@ -53,7 +52,7 @@ b_port = 'transfer'
 
 [[connections]]
 a_chain = 'stargate'
-b_chain = 'heliax'
+b_chain = 'h3liax'
 delay = '10s'
 
 [[connections.paths]]

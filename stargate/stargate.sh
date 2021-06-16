@@ -8,7 +8,7 @@ NODE_PATH="$HOME/node-${NAME}"
 mkdir ${NODE_PATH}
 
 # init node
-gaiad init heliax-${NAME} --home=${NODE_PATH}
+gaiad init heliax-${NAME} --home=${NODE_PATH} --chain-id=stargate
 
 # move genesis
 rm "${NODE_PATH}/config/genesis.json"
