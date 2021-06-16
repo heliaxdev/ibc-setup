@@ -1,6 +1,6 @@
 [global]
 timeout = '10s'
-strategy = 'packets'
+strategy = 'all'
 log_level = 'error'
 
 [[chains]]
