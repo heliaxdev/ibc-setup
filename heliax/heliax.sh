@@ -11,7 +11,7 @@ mkdir ${NODE_PATH}
 gaiad init heliax-${NAME} --home=${NODE_PATH} --chain-id=h3liax
 
 # add keys
-gaiad keys add validator --home=${NODE_PATH}
+gaiad keys add validator --home=${NODE_PATH} --output json > ${NODE_PATH}/key_seed.json 2> /dev/null
 gaiad add-genesis-account $(gaiad keys show validator -a --home=${NODE_PATH}) 1000000000stake,1000000000validatortoken --home=${NODE_PATH}
 gaiad gentx validator 1000000stake --chain-id=h3liax --home=${NODE_PATH}
 gaiad collect-gentxs --home=${NODE_PATH}
@@ -25,7 +25,9 @@ rm "${NODE_PATH}/config/app.toml"
 cp heliax/app.toml "${NODE_PATH}/config/app.toml"
 
 # generate key
-gaiad --home=${NODE_PATH} keys add user --keyring-backend="test" --output json > ${NODE_PATH}/key_seed.json 2> /dev/null
+# gaiad --home=${NODE_PATH} keys add user --keyring-backend="test" --output json > ${NODE_PATH}/key_seed.json 2> /dev/null
+
+gaiad tx bank validator cosmos1uvp3k66wl246jzcgl7etg80ly94mvtq84gr98x 100stake  --home=${NODE_PATH} --chain-id=h3liax
 
 # start node
 screen -d -m -S ${NAME} bash -c "gaiad start --home=${NODE_PATH} --log_level=info --x-crisis-skip-assert-invariants"
