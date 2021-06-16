@@ -1,6 +1,6 @@
 BINARY="$HOME/ibc-setup/ibc-rs/target/release/hermes"
 
-IBC0="heliax"
+IBC0="h3liax"
 IBC1="stargate"
 
 # Chan-Open-Init 3.1

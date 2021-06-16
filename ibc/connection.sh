@@ -1,11 +1,11 @@
 BINARY="$HOME/ibc-setup/ibc-rs/target/release/hermes"
 
-IBC0="heliax"
+IBC0="h3liax"
 IBC1="stargate"
 
 # Conn-Init 2.1
 
-$BINARY tx raw conn-init heliax $IBC1 07-tendermint-0 07-tendermint-1
+$BINARY tx raw conn-init $IBC0 $IBC1 07-tendermint-0 07-tendermint-1
 
 # Conn-Try 2.2
 
