@@ -47,6 +47,7 @@ git checkout v4.2.1
 make install
 
 # update cosmoshub peers
+pip3 install -r stargate/requirements.txt
 python3 stargate/update_peers.py
 
 # update bash profile
