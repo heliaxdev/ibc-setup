@@ -22,9 +22,9 @@ gaiad keys add user --home=$NODE_PATH --keyring-backend="test" --output json > $
 VALIDATOR_ADDRESS=$(gaiad keys show validator -a --keyring-backend="test" --home=$NODE_PATH)
 USER_ADDRESS=$(gaiad keys show user -a --keyring-backend="test" --home=$NODE_PATH)
 
-gaiad add-genesis-account $VALIDATOR_ADDRESS $STAKE --home=NODE_PATH
-gaiad add-genesis-account $USER_ADDRESS $USER_COINS --home=NODE_PATH
-gaiad gentx validator --chain-id=$CHAIN_ID --home=NODE_PATH --keyring-backend="test"
+gaiad add-genesis-account $VALIDATOR_ADDRESS $STAKE --home=$NODE_PATH
+gaiad add-genesis-account $USER_ADDRESS $USER_COINS --home=$NODE_PATH
+gaiad gentx validator --chain-id=$CHAIN_ID --home=$NODE_PATH --keyring-backend="test"
 gaiad collect-gentxs --home=$NODE_PATH
 
 # copy config
