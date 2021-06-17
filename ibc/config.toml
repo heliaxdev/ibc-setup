@@ -11,7 +11,7 @@ websocket_addr = 'ws://localhost:26657/websocket'
 rpc_timeout = '10s'
 account_prefix = 'cosmos'
 key_name = 'node_key'
-store_prefix = 'stargate'
+store_prefix = 'cosmoshub-4'
 gas = 300000
 fee_denom = 'uatom'
 fee_amount = 5000
@@ -42,7 +42,7 @@ numerator = '1'
 denominator = '3'
 
 [[connections]]
-a_chain = 'stargate'
+a_chain = 'cosmoshub-4'
 b_chain = 'h3liax'
 delay = '10s'
 
@@ -51,7 +51,7 @@ a_port = 'transfer'
 b_port = 'transfer'
 
 [[connections]]
-a_chain = 'stargate'
+a_chain = 'cosmoshub-4'
 b_chain = 'h3liax'
 delay = '10s'
 
