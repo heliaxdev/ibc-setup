@@ -34,7 +34,7 @@ echo $KEY_SEED > ${NODE_PATH}/key_seed.json
 
 # download a snapshot of the chain 15/06/2021
 rm -rf "${NODE_PATH}/data"
-DATE=${date +%Y%m%d}
+DATE=`date +%Y%m%d`
 FILENAME="cosmoshub-4-default.${DATE}.0510.tar.lz4"
 cd $NODE_PATH
 aria2c -x5 https://get.quicksync.io/$FILENAME
