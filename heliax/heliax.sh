@@ -16,16 +16,10 @@ USER_COINS="${STAKE},${SAMOLEANS}"
 
 # add keys
 gaiad keys add validator --home=${NODE_PATH} --keyring-backend="test" --output json > ${NODE_PATH}/validator_seed.json 2> /dev/null
-
-OUTPUT=$(gaiad --home=${NODE_PATH} keys add user --keyring-backend="test" --recover --output json)
-echo $OUTPUT > ${NODE_PATH}/key_seed.json 2> /dev/null
-read MNEMONIC
-KEY_SEED=$(jq --arg MNEMONIC "$MNEMONIC" '{ "mnemonic": $MNEMONIC } + .' ${NODE_PATH}/key_seed.json)
-echo $KEY_SEED > ${NODE_PATH}/key_seed.json
-
+gaiad keys add user --home=${NODE_PATH} --keyring-backend="test" --output json > ${NODE_PATH}/key_seed.json 2> /dev/null
 gaiad add-genesis-account $(gaiad keys show validator -a --keyring-backend="test" --home=${NODE_PATH}) $STAKE --home=${NODE_PATH}
 gaiad add-genesis-account $(gaiad keys show user -a --keyring-backend="test" --home=${NODE_PATH}) $USER_COINS --home=${NODE_PATH}
-gaiad gentx validator 1000000stake --chain-id=h3liax --home=${NODE_PATH} --keyring-backend="test"
+gaiad gentx validator $STAKE --chain-id=h3liax --home=${NODE_PATH} --keyring-backend="test"
 gaiad collect-gentxs --home=${NODE_PATH}
 
 # copy config
