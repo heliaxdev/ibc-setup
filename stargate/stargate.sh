@@ -9,7 +9,7 @@ CHAIN_ID=stargate
 mkdir ${NODE_PATH}
 
 # init node
-gaiad init heliax-${NAME} --home=${NODE_PATH} --chain-id=$CHAIN_ID
+gaiad init heliax-${NAME} --home=${NODE_PATH}
 
 # move genesis
 rm "${NODE_PATH}/config/genesis.json"

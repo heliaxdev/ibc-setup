@@ -4,7 +4,7 @@ strategy = 'all'
 log_level = 'error'
 
 [[chains]]
-id = 'stargate'
+id = 'cosmoshub-4'
 rpc_addr = 'http://localhost:26657'
 grpc_addr = 'http://localhost:9089'
 websocket_addr = 'ws://localhost:26657/websocket'
