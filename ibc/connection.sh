@@ -1,7 +1,7 @@
 BINARY="$HOME/ibc-setup/ibc-rs/target/release/hermes"
 
 IBC0="h3liax"
-IBC1="stargate"
+IBC1="cosmoshub-4"
 
 # Conn-Init 2.1
 
