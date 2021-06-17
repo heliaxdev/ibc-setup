@@ -3,12 +3,13 @@
 #variables
 NAME="stargate"
 NODE_PATH="$HOME/node-${NAME}"
+CHAIN_ID=stargate
 
 # create data folder
 mkdir ${NODE_PATH}
 
 # init node
-gaiad init heliax-${NAME} --home=${NODE_PATH} --chain-id=stargate
+gaiad init heliax-${NAME} --home=${NODE_PATH} --chain-id=$CHAIN_ID
 
 # move genesis
 rm "${NODE_PATH}/config/genesis.json"
@@ -23,10 +24,7 @@ cp stargate/config.toml "${NODE_PATH}/config/config.toml"
 rm "${NODE_PATH}/config/app.toml"
 cp stargate/app.toml "${NODE_PATH}/config/app.toml"
 
-# generate key
-# gaiad --home=${NODE_PATH} keys add user --keyring-backend="test" --output json > ${NODE_PATH}/key_seed.json 2> /dev/null 
-
-# import key (requires interaction)
+# import key (requires interaction) -> we need to import an address with some coin 
 OUTPUT=$(gaiad --home=${NODE_PATH} keys add user --keyring-backend="test" --recover --output json)
 echo $OUTPUT > ${NODE_PATH}/key_seed.json 2> /dev/null
 read MNEMONIC
