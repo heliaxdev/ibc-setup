@@ -13,8 +13,8 @@ account_prefix = 'cosmos'
 key_name = 'node_key'
 store_prefix = 'stargate'
 gas = 300000
-fee_denom = 'atom'
-fee_amount = 0.005
+fee_denom = 'uatom'
+fee_amount = 5000
 clock_drift = '5s'
 trusting_period = '14days'
 
