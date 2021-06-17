@@ -35,6 +35,9 @@ cp heliax/config.toml "${NODE_PATH}/config/config.toml"
 rm "${NODE_PATH}/config/app.toml"
 cp heliax/app.toml "${NODE_PATH}/config/app.toml"
 
+# start node
+screen -d -m -S ${NAME} bash -c "gaiad start --home=${NODE_PATH} --log_level=info --x-crisis-skip-assert-invariants"
+
 echo "List of keys..."
 gaiad keys list --home=$NODE_PATH --keyring-backend="test"
 
@@ -46,6 +49,3 @@ gaiad --node "$RPC_ADDR" query bank balances $VALIDATOR_ADDRESS --log_level erro
 echo "Balance for user (${USER_ADDRESS})"
 # gaiad query bank balances $USER_ADDRESS --home=$NODE_PATH --chain-id=$CHAIN_ID -> this doesn't work (?) weird
 gaiad --node "$RPC_ADDR" query bank balances $USER_ADDRESS --log_level error
-
-# start node
-screen -d -m -S ${NAME} bash -c "gaiad start --home=${NODE_PATH} --log_level=info --x-crisis-skip-assert-invariants"
