@@ -37,6 +37,7 @@ cp heliax/app.toml "${NODE_PATH}/config/app.toml"
 
 # start node
 screen -d -m -S ${NAME} bash -c "gaiad start --home=${NODE_PATH} --log_level=info --x-crisis-skip-assert-invariants"
+sleep 6
 
 echo "List of keys..."
 gaiad keys list --home=$NODE_PATH --keyring-backend="test"
