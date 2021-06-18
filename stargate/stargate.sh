@@ -43,4 +43,4 @@ rm $FILENAME
 cd ~/ibc-setup
 
 # start node
-screen -d -m -S ${NAME} bash -c "gaiad start --home=${NODE_PATH} --log_level=info --x-crisis-skip-assert-invariants"
+screen -d -m -S ${NAME} bash -c "gaiad start --home=${NODE_PATH} --log_level=error --x-crisis-skip-assert-invariants"
