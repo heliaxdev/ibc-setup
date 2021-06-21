@@ -3,7 +3,6 @@
 #variables
 NAME="stargate"
 NODE_PATH="$HOME/node-${NAME}"
-CHAIN_ID=stargate
 
 # create data folder
 mkdir ${NODE_PATH}
@@ -32,15 +31,25 @@ read MNEMONIC
 KEY_SEED=$(jq --arg MNEMONIC "$MNEMONIC" '{ "mnemonic": $MNEMONIC } + .' ${NODE_PATH}/key_seed.json)
 echo $KEY_SEED > ${NODE_PATH}/key_seed.json
 
-# download a snapshot of the chain 15/06/2021
-rm -rf "${NODE_PATH}/data"
-DATE=`date +%Y%m%d`
-FILENAME="cosmoshub-4-default.${DATE}.0510.tar.lz4"
-cd $NODE_PATH
-aria2c -x5 https://get.quicksync.io/$FILENAME
-lz4 -d $FILENAME | tar xf -
-rm $FILENAME
-cd ~/ibc-setup
+
+read -p "Do you already have a snapshot folder in home? " -n 1 -r
+echo 
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    rm -rf "${NODE_PATH}/data"
+    mv ~/ $NODE_PATH
+    cd ~/ibc-setup
+else 
+    # download a snapshot of the chain 15/06/2021
+    rm -rf "${NODE_PATH}/data"
+    DATE=`date +%Y%m%d`
+    FILENAME="cosmoshub-4-default.${DATE}.0510.tar.lz4"
+    cd $NODE_PATH
+    aria2c -x5 https://get.quicksync.io/$FILENAME
+    lz4 -d $FILENAME | tar xf -
+    rm $FILENAME
+    cd ~/ibc-setup
+fi
 
 # start node
 screen -d -m -S ${NAME} bash -c "gaiad start --home=${NODE_PATH} --log_level=error --x-crisis-skip-assert-invariants"
