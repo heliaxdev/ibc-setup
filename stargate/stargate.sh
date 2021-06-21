@@ -37,7 +37,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     rm -rf "${NODE_PATH}/data"
-    mv ~/ $NODE_PATH
+    mv ~/data $NODE_PATH
     cd ~/ibc-setup
 else 
     # download a snapshot of the chain 15/06/2021
