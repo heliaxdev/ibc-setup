@@ -46,10 +46,10 @@ cd ~/go/src/github.com/cosmos/gaia
 git checkout v4.2.1
 make install
 
-# update cosmoshub peers
-cd ~
-pip3 install -r stargate/requirements.txt
-python3 stargate/update_peers.py
+# update cosmoshub peers (optional)
+# cd ~
+# pip3 install -r stargate/requirements.txt
+# python3 stargate/update_peers.py
 
 # update bash profile
 . ~/.bash_profile

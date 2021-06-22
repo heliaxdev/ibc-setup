@@ -15,7 +15,7 @@
 proxy_app = "tcp://127.0.0.1:26658"
 
 # A custom human readable name for this node
-moniker = "heliax-1"
+moniker = "heliax-stargate"
 
 # If this node is many blocks behind the tip of the chain, FastSync
 # allows them to catchup quickly by downloading blocks in parallel
@@ -140,7 +140,7 @@ max_subscriptions_per_client = 5
 # WARNING: Using a value larger than 10s will result in increasing the
 # global HTTP write timeout, which applies to all connections and endpoints.
 # See https://github.com/tendermint/tendermint/issues/3435
-timeout_broadcast_tx_commit = "100s"
+timeout_broadcast_tx_commit = "10s"
 
 # Maximum size of request body, in bytes
 max_body_bytes = 1000000
@@ -183,7 +183,8 @@ external_address = ""
 # Comma separated list of seed nodes to connect to
 seeds = "bf8328b66dceb4987e5cd94430af66045e59899f@public-seed.cosmos.vitwit.com:26656,cfd785a4224c7940e9a10f6c1ab24c343e923bec@164.68.107.188:26656,d72b3011ed46d783e369fdf8ae2055b99a1e5074@173.249.50.25:26656,ba3bacc714817218562f743178228f23678b2873@public-seed-node.cosmoshub.certus.one:26656,3c7cad4154967a294b3ba1cc752e40e8779640ad@84.201.128.115:26656"
 
-persistent_peers = "ee27245d88c632a556cf72cc7f3587380c09b469@45.79.249.253:26656,bf8328b66dceb4987e5cd94430af66045e59899f@public-seed.cosmos.vitwit.com:26656,585794737e6b318957088e645e17c0669f3b11fc@54.160.123.34:26656,df57f70cd3a104dcbd14d1aac9eb260c99a620e0@121.78.247.247:26656,11dfe200894f38e411beca77928e9dd118e66813@94.130.98.157:26656,5b4ed476e01c49b23851258d867cc0cfc0c10e58@206.189.4.227:26656,654f47a762c8f9257aef4a44c1fb5014916d8b20@99.79.60.15:26656,366ac852255c3ac8de17e11ae9ec814b8c68bddb@51.15.94.196:26656,547bfac343b9b4bd54ce9cb891c4bca3db2a0922@157.230.116.241:26656,d6318b3bd51a5e2b8ed08f2e520d50289ed32bf1@52.79.43.100:26656,1bfda3d59e70290a3dada9bb809dd954371850d3@54.180.225.240:26656,6ee94c2093505e8790442c054e6e1e0211d36583@44.239.140.195:26656,ec779a2741da6dd2ccdaa6dfc0bebb10e595dfa4@50.18.113.67:26656,cfd785a4224c7940e9a10f6c1ab24c343e923bec@164.68.107.188:26656,047f723806ee702b211e7227f89eacd829aabd86@52.9.212.125:26656,b0e746acb6fbed7a0311fe21cfb2ee94581ca3bc@51.79.21.187:26656,82772547c4575c18dfe6e75aafe521cf7d4dc8de@142.93.157.186:26656,3c7cad4154967a294b3ba1cc752e40e8779640ad@84.201.128.115:26656"
+# Comma separated list of nodes to keep persistent connections to
+persistent_peers = ""
 
 # UPNP port forwarding
 upnp = false
@@ -196,7 +197,7 @@ addr_book_file = "config/addrbook.json"
 addr_book_strict = true
 
 # Maximum number of inbound peers
-max_num_inbound_peers = 50
+max_num_inbound_peers = 40
 
 # Maximum number of outbound peers to connect to, excluding persistent peers
 max_num_outbound_peers = 10
@@ -310,7 +311,7 @@ temp_dir = ""
 #   1) "v0" (default) - the legacy fast sync implementation
 #   2) "v1" - refactor of v0 version for better testability
 #   2) "v2" - complete redesign of v0, optimized for testability & readability
-version = "v2"
+version = "v0"
 
 #######################################################
 ###         Consensus Configuration Options         ###
@@ -320,7 +321,7 @@ version = "v2"
 wal_file = "data/cs.wal/wal"
 
 # How long we wait for a proposal block before prevoting nil
-timeout_propose = "1s"
+timeout_propose = "3s"
 # How much timeout_propose increases with each round
 timeout_propose_delta = "500ms"
 # How long we wait after receiving +2/3 prevotes for “anything” (ie. not a single block or nil)
@@ -334,7 +335,7 @@ timeout_precommit_delta = "500ms"
 # How long we wait after committing a block, before starting on the new
 # height (this gives us a chance to receive some more precommits, even
 # though we already have +2/3).
-timeout_commit = "1s"
+timeout_commit = "5s"
 
 # How many blocks to look back to check existence of the node's consensus votes before joining consensus
 # When non-zero, the node will panic upon restart
@@ -368,8 +369,6 @@ peer_query_maj23_sleep_duration = "2s"
 #   2) "kv" (default) - the simplest possible indexer, backed by key-value storage (defaults to levelDB; see DBBackend).
 # 		- When "kv" is chosen "tx.height" and "tx.hash" will always be indexed.
 indexer = "null"
-
-index_all_keys = true
 
 #######################################################
 ###       Instrumentation Configuration Options     ###

@@ -1,4 +1,4 @@
-EC2_TYPE=c5.large
+EC2_TYPE=c5.xlarge
 IMAGE_ID=ami-06c8b4c8c78aeaa04 # amazon linux
 KEY_NAME=ibc
 SECURITY_GROUP=sg-017c7a31a0f052930
