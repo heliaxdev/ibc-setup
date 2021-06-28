@@ -13,10 +13,7 @@ account_prefix = 'cosmos'
 key_name = 'node_key'
 store_prefix = 'cosmoshub-4'
 max_gas = 300000
-gas_price = {
-    price = 0.001,
-    denom = 'uatom'
-}
+gas_price = { price = 0.001, denom = 'uatom' }
 clock_drift = '5s'
 trusting_period = '14days'
 
@@ -34,10 +31,7 @@ account_prefix = 'cosmos'
 key_name = 'node_key'
 store_prefix = 'heliax'
 max_gas = 3000000
-gas_price = {
-    price = 0.001,
-    denom = 'stake'
-}
+gas_price = { price = 0.001, denom = 'stake' }
 clock_drift = '5s'
 trusting_period = '14days'
 
