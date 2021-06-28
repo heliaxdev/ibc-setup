@@ -45,3 +45,4 @@ cosmos.pem
 genesis.json
 
 key
+ibc/commands.sh

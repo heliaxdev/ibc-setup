@@ -12,9 +12,11 @@ rpc_timeout = '10s'
 account_prefix = 'cosmos'
 key_name = 'node_key'
 store_prefix = 'cosmoshub-4'
-gas = 300000
-fee_denom = 'uatom'
-fee_amount = 5000
+max_gas = 300000
+gas_price = {
+    price = 0.001,
+    denom = 'uatom'
+}
 clock_drift = '5s'
 trusting_period = '14days'
 
@@ -31,9 +33,11 @@ rpc_timeout = '10s'
 account_prefix = 'cosmos'
 key_name = 'node_key'
 store_prefix = 'heliax'
-gas = 3000000
-fee_denom = 'stake'
-fee_amount = 10
+max_gas = 3000000
+gas_price = {
+    price = 0.001,
+    denom = 'stake'
+}
 clock_drift = '5s'
 trusting_period = '14days'
 
