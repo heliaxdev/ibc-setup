@@ -1,7 +1,7 @@
 [global]
 timeout = '10s'
 strategy = 'all'
-log_level = 'error'
+log_level = 'info'
 
 [[chains]]
 id = 'cosmoshub-4'
