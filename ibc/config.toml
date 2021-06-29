@@ -11,7 +11,7 @@ websocket_addr = 'ws://localhost:26657/websocket'
 rpc_timeout = '10s'
 account_prefix = 'cosmos'
 key_name = 'node_key'
-store_prefix = 'cosmoshub-4'
+store_prefix = 'ibc'
 max_gas = 900000
 gas_adjustment = 0.3
 gas_price = { price = 0.001, denom = 'uatom' }
@@ -30,7 +30,7 @@ websocket_addr = 'ws://localhost:26357/websocket'
 rpc_timeout = '10s'
 account_prefix = 'cosmos'
 key_name = 'node_key'
-store_prefix = 'heliax'
+store_prefix = 'ibc'
 max_gas = 3000000
 gas_price = { price = 0.001, denom = 'stake' }
 clock_drift = '5s'
