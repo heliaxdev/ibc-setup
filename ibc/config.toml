@@ -12,7 +12,7 @@ rpc_timeout = '10s'
 account_prefix = 'cosmos'
 key_name = 'node_key'
 store_prefix = 'cosmoshub-4'
-max_gas = 900000
+max_gas = 1500000
 gas_adjustment = 0.3
 gas_price = { price = 0.001, denom = 'uatom' }
 clock_drift = '5s'

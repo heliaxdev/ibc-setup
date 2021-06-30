@@ -40,7 +40,7 @@ then
     mv ~/data $NODE_PATH
     cd ~/ibc-setup
 else 
-    # download a snapshot of the chain 15/06/2021
+    # download a snapshot of the chain
     rm -rf "${NODE_PATH}/data"
     DATE=`date +%Y%m%d`
     FILENAME="cosmoshub-4-default.${DATE}.0510.tar.lz4"
